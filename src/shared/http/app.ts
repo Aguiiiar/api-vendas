@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import 'express-async-errors';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
@@ -21,6 +22,8 @@ app.use(
         message: error.message,
       });
     }
+
+    console.log(error);
 
     return response.status(500).json({
       status: 'error',
