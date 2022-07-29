@@ -8,6 +8,7 @@ import AppError from '@shared/http/errors/AppError';
 import '@shared/typeorm';
 import { errors } from 'celebrate';
 import uploadConfig from '@config/upload';
+import logger from '@lib/logger';
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.use(
       });
     }
 
-    console.log(error);
+    logger.error(error);
 
     return response.status(500).json({
       status: 'error',
