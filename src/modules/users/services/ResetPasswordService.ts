@@ -35,6 +35,8 @@ class ResetPasswordService {
     }
 
     user.password = hashSync(password, 8);
+
+    await usersRepository.save(user);
   }
 }
 
