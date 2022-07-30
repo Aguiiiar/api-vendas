@@ -23,6 +23,7 @@ passwordRoutes.post(
     [Segments.BODY]: {
       token: Joi.string().uuid().required(),
       password: Joi.string().required(),
+      password_confirmation: Joi.string().valid(Joi.ref('password')),
     },
   }),
   resetPasswordController.create,
