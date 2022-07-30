@@ -2,6 +2,7 @@ import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import UsersRepository from '../typeorm/repositories/UsersRepository';
 import UserTokensRepository from '../typeorm/repositories/UserTokensRepository';
+import EtherealMailer from '@config/mail/EtherealMailer';
 
 class SendForgotPasswordService {
   public async handle(email: string): Promise<void> {
@@ -17,6 +18,10 @@ class SendForgotPasswordService {
     const token = await userTokensRepository.generateToken(user.id);
 
     console.log(token);
+    await EtherealMailer.sendMail({
+      to: email,
+      body: `Solicitaçao de redefinição de senha recebida. Token: ${token}`,
+    });
   }
 }
 
