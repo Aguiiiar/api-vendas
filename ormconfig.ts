@@ -1,5 +1,5 @@
 export default {
-  type: 'postgres',
+  type: process.env.POSTGRES_TYPE,
   host: process.env.POSTGRES_HOST,
   port: process.env.POSTGRES_PORT,
   username: process.env.POSTGRES_USERNAME,
