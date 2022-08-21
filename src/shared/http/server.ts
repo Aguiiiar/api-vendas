@@ -1,6 +1,7 @@
 import logger from '@lib/logger';
 import app from './app';
+const port = process.env.SERVER_PORT;
 
-app.listen(3333, () => {
-  logger.info('Server started on port 3333! 🏆');
+app.listen(port, () => {
+  logger.info(`Server started on port ${port}! 🏆`);
 });
