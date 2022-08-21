@@ -29,4 +29,6 @@ passwordRoutes.post(
   resetPasswordController.create,
 );
 
+passwordRoutes.get('/reset_password', resetPasswordController.reset);
+
 export default passwordRoutes;

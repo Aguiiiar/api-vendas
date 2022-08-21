@@ -37,7 +37,7 @@ class SendForgotPasswordService {
         // template: `Olá, {{name}}. <a href="/teste" target="_blank">Recuperar senha</a>`,
         variables: {
           name: user.name,
-          link: `http:localhost:8080/reset_password?token=${token}`,
+          link: `http://localhost:8080/api/v1/password/reset_password?token=${token}`,
         },
       },
     });
