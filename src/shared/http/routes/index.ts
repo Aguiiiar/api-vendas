@@ -8,6 +8,7 @@ const routes = Router();
 
 routes.use('/products', productsRouter);
 routes.use('/users', usersRouter);
+routes.use('/profile', productsRouter);
 routes.use('/sessions', sessionRoutes);
 routes.use('/password', passwordRoutes);
 
