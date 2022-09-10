@@ -1,9 +1,12 @@
 import { Router } from 'express';
 import { celebrate, Joi, Segments } from 'celebrate';
 import ProfileController from '../controller/ProfileController';
+import isAuthenticated from '../middlewares/isAuthenticated';
 
 const profileRoutes = Router();
 const profileController = new ProfileController();
+
+profileRoutes.use(isAuthenticated);
 
 profileRoutes.get('/', profileController.show);
 profileRoutes.post(
