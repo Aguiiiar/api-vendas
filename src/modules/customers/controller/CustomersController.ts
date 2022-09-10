@@ -8,8 +8,6 @@ import UpdateCustomerService from '../services/UpdateCustomerService';
 class CustomersController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listCustomers = new ListCustomerService();
-
-    console.log(request.user.id);
     const customers = await listCustomers.handle();
 
     return response.json(customers);
