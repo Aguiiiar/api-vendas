@@ -9,7 +9,7 @@ const profileController = new ProfileController();
 profileRoutes.use(isAuthenticated);
 
 profileRoutes.get('/', profileController.show);
-profileRoutes.post(
+profileRoutes.put(
   '/',
   celebrate({
     [Segments.BODY]: Joi.object().keys({
