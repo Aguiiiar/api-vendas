@@ -9,11 +9,13 @@ import '@shared/typeorm';
 import { errors } from 'celebrate';
 import uploadConfig from '@config/upload';
 import logger from '@lib/logger';
+import { pagination } from 'typeorm-pagination';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(pagination);
 app.use('/files', express.static(uploadConfig.directory));
 app.use('/api/v1', routes);
 
