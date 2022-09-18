@@ -33,6 +33,7 @@
   "dependencies": {
     "ioredis": "^4.19.4",
     "redis": "^3.0.2",
+    "rate-limiter-flexible": "^2.1.16",
     "bcryptjs": "^2.4.3",
     "celebrate": "^15.0.1",
     "class-transformer": "^0.5.1",
